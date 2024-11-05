@@ -4,8 +4,10 @@ extends Control
 
 enum COLOR {WHITE, BLACK, RED, GREEN, YELLOW, BLUE}
 enum SHAPE {CIRCLE, SQUARE, CROSS, DOT}
+var square_size = GameManager.piece_size
 
 func _ready() -> void:
+	shape.size = Vector2(square_size,square_size)
 	shape.hide()
 
 func show_shape(shape_texture:SHAPE, shape_color:COLOR):

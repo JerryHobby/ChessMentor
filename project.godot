@@ -15,13 +15,29 @@ run/main_scene="res://Scenes/MainScene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+SqlController="*res://Scripts/SQLController.gd"
+UciEngine="*res://Scripts/UCIEngine.gd"
+
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
+window/size/viewport_width=1728
+window/size/viewport_height=972
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="Chess Mentor"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 [rendering]
 
