@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddqhrkf14lllk"]
+
+[ext_resource type="Texture2D" uid="uid://cda0twn0rfa4h" path="res://Assets/chessThemes/pieces/set3/WhiteKnight.png" id="1_e17gs"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_e17gs")
+expand_mode = 1

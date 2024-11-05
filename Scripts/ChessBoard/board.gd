@@ -1,6 +1,7 @@
 extends GridContainer
 
 @onready var square_1: TextureRect = $Square1
+@onready var piece_controller: Node2D = $"../PieceController"
 
 var square_size = GameManager.piece_size
 
@@ -20,3 +21,7 @@ func _ready() -> void:
 			node.set_dark()
 		else:
 			node.set_light()
+
+
+func setup_board_from_fen(fen):
+	piece_controller.setup_board_from_fen(fen)

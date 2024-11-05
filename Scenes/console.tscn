@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxky2h281uega"]
+
+[ext_resource type="Script" path="res://Scripts/Console/console.gd" id="1_wljcp"]
+[ext_resource type="FontFile" uid="uid://b40wtusgfvd3q" path="res://Assets/HackNerdFontMono-Regular.ttf" id="2_1akgs"]
+
+[node name="Console" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wljcp")
+
+[node name="Console" type="TextEdit" parent="."]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_1akgs")
+theme_override_font_sizes/font_size = 14
+text = "jhkjhkjhkjh
+kjhkjhkjhkjh"
+placeholder_text = "Stockfish Console"
+editable = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="UCI Command" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "UCI Command"
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
+[connection signal="text_submitted" from="HBoxContainer/UCI Command" to="." method="_on_uci_command_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]

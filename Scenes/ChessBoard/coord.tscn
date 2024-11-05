@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnkr4scfmervr"]
 
-[ext_resource type="Script" path="res://Scripts/Coord.gd" id="1_cnlv5"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/coord.gd" id="1_cnlv5"]
 
-[node name="Coord" type="MarginContainer"]
+[node name="BoardCoord" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 5

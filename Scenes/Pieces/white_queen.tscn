@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://derfyb84aeer7"]
+
+[ext_resource type="Texture2D" uid="uid://b1d0s86i8xgsk" path="res://Assets/chessThemes/pieces/set3/WhiteQueen.png" id="1_4xck5"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4xck5")
+expand_mode = 1

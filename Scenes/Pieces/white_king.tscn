@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://w48an78c4deh"]
+
+[ext_resource type="Texture2D" uid="uid://62tt0vnfyjmj" path="res://Assets/chessThemes/pieces/set3/WhiteKing.png" id="1_8fp77"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8fp77")
+expand_mode = 1

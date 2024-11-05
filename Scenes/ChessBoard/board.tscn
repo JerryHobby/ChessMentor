@@ -1,0 +1,291 @@
+[gd_scene load_steps=5 format=3 uid="uid://cehtaf6cl2kmd"]
+
+[ext_resource type="Script" path="res://Scripts/ChessBoard/board.gd" id="1_l2glv"]
+[ext_resource type="PackedScene" uid="uid://b4yohunmwmc1p" path="res://Scenes/ChessBoard/square.tscn" id="2_whc3d"]
+[ext_resource type="PackedScene" uid="uid://cnkr4scfmervr" path="res://Scenes/ChessBoard/coord.tscn" id="3_cemlu"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece_controller.gd" id="4_f71to"]
+
+[node name="ChessBoard" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 23
+theme_override_constants/margin_top = 23
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ChessBoard" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 9
+script = ExtResource("1_l2glv")
+
+[node name="Square1" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square2" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square3" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square4" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square5" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square6" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square7" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square8" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord8" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "8"
+
+[node name="Square9" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square10" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square11" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square12" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square13" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square14" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square15" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square16" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord7" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "7"
+
+[node name="Square17" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square18" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square19" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square20" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square21" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square22" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square23" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square24" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord6" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "6"
+
+[node name="Square25" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square26" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square27" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square28" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square29" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square30" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square31" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square32" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord5" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "5"
+
+[node name="Square33" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square34" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square35" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square36" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square37" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square38" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square39" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square40" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord4" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "4"
+
+[node name="Square41" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square42" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square43" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square44" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square45" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square46" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square47" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square48" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord3" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "3"
+
+[node name="Square49" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square50" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square51" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square52" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square53" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square54" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square55" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square56" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord2" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "2"
+
+[node name="Square57" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square58" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square59" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square60" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square61" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square62" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square63" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Square64" parent="MarginContainer/ChessBoard" instance=ExtResource("2_whc3d")]
+layout_mode = 2
+
+[node name="Coord1" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "1"
+
+[node name="CoordA" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "A"
+
+[node name="CoordB" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "B"
+
+[node name="CoordC" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "C"
+
+[node name="CoordD" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "D"
+
+[node name="CoordE" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "E"
+
+[node name="CoordF" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "F"
+
+[node name="CoordG" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "G"
+
+[node name="CoordH" parent="MarginContainer/ChessBoard" instance=ExtResource("3_cemlu")]
+layout_mode = 2
+labelText = "H"
+
+[node name="PieceController" type="Node2D" parent="MarginContainer"]
+script = ExtResource("4_f71to")

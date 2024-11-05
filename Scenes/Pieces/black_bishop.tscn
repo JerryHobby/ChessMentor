@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba5x6pccrqxlg"]
+
+[ext_resource type="Texture2D" uid="uid://d0h2gv757kv5d" path="res://Assets/chessThemes/pieces/set3/BlackBishop.png" id="1_j7s60"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_j7s60")
+expand_mode = 1

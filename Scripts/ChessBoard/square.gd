@@ -2,7 +2,7 @@ extends TextureRect
 
 const LIGHT_SQUARE = preload("res://Assets/chessThemes/board/set0/lightSquare.png")
 const DARK_SQUARE = preload("res://Assets/chessThemes/board/set0/darkSquare.png")
-@onready var shapes: Control = $Shapes
+@onready var marker: Control = $Marker
 
 var dark = true;
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +18,8 @@ func set_light():
 
 
 func _on_mouse_entered() -> void:
-	shapes.show_shape(shapes.SHAPE.SQUARE, shapes.COLOR.WHITE)
+	#marker.show_shape(marker.SHAPE.CIRCLE, marker.COLOR.WHITE)
+	pass
 
 func _on_mouse_exited() -> void:
-	shapes.hide_shape()
+	marker.hide_shape()
