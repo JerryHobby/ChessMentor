@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bppg34so83pxx"]
+
+[node name="PlayerProfile" type="VBoxContainer"]
+offset_right = 512.0
+offset_bottom = 768.0
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+text = "Name:"
+
+[node name="Email" type="Label" parent="."]
+layout_mode = 2
+text = "Email:"
+
+[node name="Rating" type="Label" parent="."]
+layout_mode = 2
+text = "Rating:"
+
+[node name="PuzzlesPlayed" type="Label" parent="."]
+layout_mode = 2
+text = "Puzzles Played:"
+
+[node name="GamesPlayed" type="Label" parent="."]
+layout_mode = 2
+text = "Games Played:"

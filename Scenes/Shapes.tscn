@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc7f1nfhqp4f2"]
+
+[ext_resource type="Script" path="res://Scripts/Shapes.gd" id="1_djxus"]
+[ext_resource type="Texture2D" uid="uid://c4b6eth2tjhn4" path="res://Assets/circle.svg" id="1_vu7em"]
+
+[node name="Shapes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_djxus")
+
+[node name="Shape" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+texture = ExtResource("1_vu7em")
+expand_mode = 1

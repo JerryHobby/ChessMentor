@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4yohunmwmc1p"]
+
+[ext_resource type="Texture2D" uid="uid://bsrb0ecsdhwp" path="res://Assets/chessThemes/board/set0/lightSquare.png" id="1_vio4r"]
+[ext_resource type="Script" path="res://Scripts/Square.gd" id="2_w8arc"]
+[ext_resource type="PackedScene" uid="uid://dc7f1nfhqp4f2" path="res://Scenes/Shapes.tscn" id="3_4536n"]
+
+[node name="Square" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vio4r")
+expand_mode = 2
+script = ExtResource("2_w8arc")
+
+[node name="Shapes" parent="." instance=ExtResource("3_4536n")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
