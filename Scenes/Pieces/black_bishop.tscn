@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba5x6pccrqxlg"]
+[gd_scene load_steps=3 format=3 uid="uid://dg1q63krcg703"]
 
-[ext_resource type="Texture2D" uid="uid://d0h2gv757kv5d" path="res://Assets/chessThemes/pieces/set3/BlackBishop.png" id="1_j7s60"]
-[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_t0k8t"]
+[ext_resource type="PackedScene" uid="uid://cfvlqyy80glur" path="res://Scenes/Pieces/base_piece.tscn" id="1_cl7ab"]
+[ext_resource type="Texture2D" uid="uid://d0h2gv757kv5d" path="res://Assets/chessThemes/pieces/set3/BlackBishop.png" id="2_foao5"]
 
-[node name="TextureRect" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_j7s60")
-expand_mode = 1
-script = ExtResource("2_t0k8t")
+[node name="Piece" instance=ExtResource("1_cl7ab")]
+texture = ExtResource("2_foao5")

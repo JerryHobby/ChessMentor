@@ -21,7 +21,7 @@ var board = []
 var piece_offset
 
 func _ready():
-	piece_offset = square_1.size/3
+	piece_offset = square_1.size / 3
 
 	# Example FEN string for initial position
 	var fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
@@ -47,6 +47,7 @@ func clear_board():
 
 func place_piece(piece_char: String, row: int, col: int):
 	var piece_scene = PIECE_SCENES.get(piece_char)
+	
 	if piece_scene:
 		var piece_instance = piece_scene.instantiate()
 		piece_instance.size = Vector2(GameManager.piece_size, GameManager.piece_size)

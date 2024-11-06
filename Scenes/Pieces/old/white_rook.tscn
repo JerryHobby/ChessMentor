@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp3skmlul3r17"]
+
+[ext_resource type="Texture2D" uid="uid://6pvy6k8q43ex" path="res://Assets/chessThemes/pieces/set3/WhiteRook.png" id="1_uqkgj"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_v5pm4"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uqkgj")
+expand_mode = 1
+script = ExtResource("2_v5pm4")

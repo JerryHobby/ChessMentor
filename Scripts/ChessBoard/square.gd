@@ -19,7 +19,7 @@ func set_light():
 
 
 func _on_mouse_entered() -> void:
-	#marker.show_shape(marker.SHAPE.CIRCLE, marker.COLOR.WHITE)
+	marker.show_shape(marker.SHAPE.CIRCLE, marker.COLOR.WHITE)
 	pass
 
 func _on_mouse_exited() -> void:

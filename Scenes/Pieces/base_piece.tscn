@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfvlqyy80glur"]
+
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_6j7vw"]
+
+[node name="Piece" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+script = ExtResource("2_6j7vw")

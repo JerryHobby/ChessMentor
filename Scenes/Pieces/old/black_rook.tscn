@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdmia55ougjm7"]
+
+[ext_resource type="Texture2D" uid="uid://vdmyfqh1c05s" path="res://Assets/chessThemes/pieces/set3/BlackRook.png" id="1_go5oq"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_xr5si"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_go5oq")
+expand_mode = 1
+script = ExtResource("2_xr5si")

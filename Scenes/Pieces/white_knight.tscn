@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddqhrkf14lllk"]
+[gd_scene load_steps=3 format=3 uid="uid://47oikulevvb2"]
 
-[ext_resource type="Texture2D" uid="uid://cda0twn0rfa4h" path="res://Assets/chessThemes/pieces/set3/WhiteKnight.png" id="1_e17gs"]
-[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_0bq1t"]
+[ext_resource type="PackedScene" uid="uid://cfvlqyy80glur" path="res://Scenes/Pieces/base_piece.tscn" id="1_vfcg8"]
+[ext_resource type="Texture2D" uid="uid://cda0twn0rfa4h" path="res://Assets/chessThemes/pieces/set3/WhiteKnight.png" id="2_rxe82"]
 
-[node name="TextureRect" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_e17gs")
-expand_mode = 1
-script = ExtResource("2_0bq1t")
+[node name="Piece" instance=ExtResource("1_vfcg8")]
+texture = ExtResource("2_rxe82")

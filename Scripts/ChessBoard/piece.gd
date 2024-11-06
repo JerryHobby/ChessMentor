@@ -4,6 +4,7 @@ var dragging = false
 var offset = Vector2()
 
 func _ready():
+	size = Vector2(GameManager.piece_size, GameManager.piece_size)
 	set_process_input(true)
 
 func _input(event):

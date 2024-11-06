@@ -1,12 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctmiuqupqat0f"]
+[gd_scene load_steps=3 format=3 uid="uid://cy548vqlkgqdj"]
 
-[ext_resource type="Texture2D" uid="uid://df5hba8hdqoj7" path="res://Assets/chessThemes/pieces/set3/BlackPawn.png" id="1_jpbm5"]
-[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_i0jna"]
+[ext_resource type="PackedScene" uid="uid://cfvlqyy80glur" path="res://Scenes/Pieces/base_piece.tscn" id="1_v0fqm"]
+[ext_resource type="Texture2D" uid="uid://df5hba8hdqoj7" path="res://Assets/chessThemes/pieces/set3/BlackPawn.png" id="2_5rfh7"]
 
-[node name="TextureRect" type="TextureRect"]
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_default_cursor_shape = 2
-texture = ExtResource("1_jpbm5")
-expand_mode = 1
-script = ExtResource("2_i0jna")
+[node name="Piece" instance=ExtResource("1_v0fqm")]
+texture = ExtResource("2_5rfh7")
