@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cavxdbypjvknv"]
+[gd_scene load_steps=3 format=3 uid="uid://cavxdbypjvknv"]
 
 [ext_resource type="Texture2D" uid="uid://c6bd5maocvkqh" path="res://Assets/chessThemes/pieces/set3/WhiteBishop.png" id="1_bigjv"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_5qr3x"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_bigjv")
 expand_mode = 1
+script = ExtResource("2_5qr3x")

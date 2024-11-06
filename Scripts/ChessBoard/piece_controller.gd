@@ -15,9 +15,14 @@ const PIECE_SCENES = {
 	'k': preload("res://Scenes/Pieces/black_king.tscn")
 }
 
+@onready var square_1: TextureRect = $"../Board/Square1"
+
 var board = []
-var piece_offset = Vector2(33,36)
+var piece_offset
+
 func _ready():
+	piece_offset = square_1.size/3
+
 	# Example FEN string for initial position
 	var fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
 	setup_board_from_fen(fen)
@@ -28,11 +33,11 @@ func setup_board_from_fen(fen: String):
 	for row_index in range(8):
 		var row = rows[row_index]
 		var col_index = 0
-		for char in row:
-			if char in "12345678":
-				col_index += int(char)
+		for ch in row:
+			if ch in "12345678":
+				col_index += int(ch)
 			else:
-				place_piece(char, row_index, col_index)
+				place_piece(ch, row_index, col_index)
 				col_index += 1
 
 func clear_board():
@@ -52,9 +57,22 @@ func place_piece(piece_char: String, row: int, col: int):
 		piece_offset + Vector2(col * piece_instance.size.x, row * piece_instance.size.y)
 		board.append(piece_instance)
 
-func move_piece(piece_instance: Node2D, new_row: int, new_col: int):
-	piece_instance.position = Vector2(new_col * piece_instance.size.x, new_row * piece_instance.size.y)
+func move_piece(piece_instance, new_row: int, new_col: int):
+	piece_instance.position = piece_offset + Vector2(new_col * piece_instance.size.x, new_row * piece_instance.size.y)
 
-func remove_piece(piece_instance: Node2D):
+func remove_piece(piece_instance):
 	piece_instance.queue_free()
-	board.erase(piece_instance)
+
+func piece_dropped(piece_instance, new_position: Vector2):
+	var target_offset = piece_offset + Vector2(0, -33)
+	# Adjust the new position by subtracting the piece_offset
+	var adjusted_position = new_position + target_offset
+	
+	# Calculate the new row and column based on the adjusted position
+	var new_row = int(adjusted_position.y / piece_instance.size.y)
+	var new_col = int(adjusted_position.x / piece_instance.size.x)
+	
+	# Move the piece to the new row and column
+	move_piece(piece_instance, new_row, new_col)
+	
+	# Additional logic to handle game rules, captures, etc.

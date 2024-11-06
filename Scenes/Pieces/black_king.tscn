@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://krdnc7hhtmwp"]
+[gd_scene load_steps=3 format=3 uid="uid://krdnc7hhtmwp"]
 
 [ext_resource type="Texture2D" uid="uid://c8b0nbqreqpkw" path="res://Assets/chessThemes/pieces/set3/BlackKing.png" id="1_1aoso"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_1w43y"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_1aoso")
 expand_mode = 1
+script = ExtResource("2_1w43y")

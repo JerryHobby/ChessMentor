@@ -75,7 +75,7 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ChessBoard" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_2b2l8")]
+[node name="Board" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_2b2l8")]
 layout_mode = 2
 
 [node name="Console" parent="VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("4_y6h4q")]

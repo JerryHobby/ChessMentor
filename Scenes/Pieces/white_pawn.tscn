@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b566csp5fojce"]
+[gd_scene load_steps=3 format=3 uid="uid://b566csp5fojce"]
 
 [ext_resource type="Texture2D" uid="uid://cc04d1c7vor68" path="res://Assets/chessThemes/pieces/set3/WhitePawn.png" id="1_nyg75"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/piece.gd" id="2_f06yl"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_nyg75")
 expand_mode = 1
+script = ExtResource("2_f06yl")

@@ -7,6 +7,7 @@ const DARK_SQUARE = preload("res://Assets/chessThemes/board/set0/darkSquare.png"
 var dark = true;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	size = Vector2(GameManager.piece_size, GameManager.piece_size)
 	texture = LIGHT_SQUARE
 	
 func set_dark():

@@ -20,7 +20,7 @@ enum HELPMENU {
 	SUPPORT
 }
 
-@onready var chess_board = $"../MarginContainer/HBoxContainer/ChessBoard/MarginContainer/PieceController"
+@onready var board = $"../MarginContainer/HBoxContainer/Board/MarginContainer/PieceController"
 
 func _on_game_id_pressed(id: int) -> void:
 	match id:
@@ -59,7 +59,7 @@ func load_puzzle() -> void:
 	var fen = puzzleDb.get_random_fen()[0]["FEN"]
 	var command = "position fen " + fen + " moves"
 	
-	chess_board.setup_board_from_fen(fen)
+	board.setup_board_from_fen(fen)
 	# load pieces onto the board to display the puzzle in the FEN
 	UciEngine.write(command)
 	UciEngine.write("d")
