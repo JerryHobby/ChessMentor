@@ -4,30 +4,34 @@ var console_text = ""
 var puzzleDb
 @onready var consoleNode: TextEdit = $Console
 @onready var commandNode: LineEdit = $"HBoxContainer/UCI Command"
-
+const MAX_CONSOLE_SIZE = 50_000
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	UciEngine.connect("new_text", _on_new_text)
+
 	UciEngine.write("help")
+
 	#get_tree().get_root().size_changed.connect(resize)
 
 #func resize():
 	#print("Screen resized")
 
 
-
-func _process(_delta: float) -> void:
-	#console_text = console_text + UciEngine.read()
-	consoleNode.text = UciEngine.output_text
-	consoleNode.scroll_vertical = consoleNode.get_v_scroll_bar().max_value
+#func _process(_delta: float) -> void:
+	##console_text = console_text + UciEngine.read()
+	#consoleNode.text = UciEngine.output_text
+	#consoleNode.scroll_vertical = consoleNode.get_v_scroll_bar().max_value
 
 
 func _on_move_pressed() -> void:
 	UciEngine.write("go movetime 1000")
 
 
-
-
+func _on_new_text(line: String):
+	consoleNode.text += line + "\n"
+	consoleNode.text = consoleNode.text.right(MAX_CONSOLE_SIZE)
+	consoleNode.scroll_vertical = consoleNode.get_v_scroll_bar().max_value
 
 func _on_submit_button_pressed() -> void:
 	UciEngine.write(commandNode.text)
