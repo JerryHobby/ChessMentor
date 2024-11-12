@@ -6,11 +6,16 @@ var puzzleDb
 @onready var commandNode: LineEdit = $"HBoxContainer/UCI Command"
 const MAX_CONSOLE_SIZE = 50_000
 
+# Reference to the UciEngine instance
+@onready var uciEngine: UciEngine = get_node("/root/UciEngine")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	UciEngine.connect("new_text", _on_new_text)
+	uciEngine.NewUciText.connect(_on_new_text)
+	
+	#.connect("NewTextEventHandler", _on_new_text)
 
-	UciEngine.write("help")
+	uciEngine.Write("help")
 
 	#get_tree().get_root().size_changed.connect(resize)
 
@@ -25,7 +30,7 @@ func _ready() -> void:
 
 
 func _on_move_pressed() -> void:
-	UciEngine.write("go movetime 1000")
+	uciEngine.Write("go movetime 1000")
 
 
 func _on_new_text(line: String):
@@ -34,12 +39,10 @@ func _on_new_text(line: String):
 	consoleNode.scroll_vertical = consoleNode.get_v_scroll_bar().max_value
 
 func _on_submit_button_pressed() -> void:
-	UciEngine.write(commandNode.text)
+	uciEngine.Write(commandNode.text)
 	print("Sending:", commandNode.text)
 	commandNode.text = ""
 
 
 func _on_uci_command_text_submitted(new_text: String) -> void:
-	UciEngine.write(new_text)
-	print("Sending:", new_text)
-	commandNode.text = ""
+	_on_submit_button_pressed()

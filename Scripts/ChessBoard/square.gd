@@ -9,6 +9,7 @@ var dark = true;
 func _ready() -> void:
 	size = Vector2(GameManager.piece_size, GameManager.piece_size)
 	texture = LIGHT_SQUARE
+	mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func set_dark():
 	dark = true;
@@ -19,7 +20,7 @@ func set_light():
 
 
 func _on_mouse_entered() -> void:
-	marker.show_shape(marker.SHAPE.CIRCLE, marker.COLOR.WHITE)
+	#marker.show_shape(marker.SHAPE.CIRCLE, marker.COLOR.WHITE)
 	pass
 
 func _on_mouse_exited() -> void:

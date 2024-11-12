@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc7f1nfhqp4f2"]
 
 [ext_resource type="Script" path="res://Scripts/ChessBoard/marker.gd" id="1_wuhxp"]
-[ext_resource type="Texture2D" uid="uid://c4b6eth2tjhn4" path="res://Assets/circle.svg" id="2_2hv5p"]
+[ext_resource type="Texture2D" uid="uid://b7pycxigif4v7" path="res://Assets/Shapes/CircleWhite.svg" id="2_nahsg"]
 
 [node name="Marker" type="Control"]
 layout_mode = 3
@@ -17,5 +17,5 @@ script = ExtResource("1_wuhxp")
 visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-texture = ExtResource("2_2hv5p")
+texture = ExtResource("2_nahsg")
 expand_mode = 1

@@ -61,8 +61,8 @@ func load_puzzle() -> void:
 	
 	board.setup_board_from_fen(fen)
 	# load pieces onto the board to display the puzzle in the FEN
-	UciEngine.write(command)
-	UciEngine.write("d")
+	UciEngine.Write(command)
+	UciEngine.Write("d")
 
 func hint() -> void:
-	UciEngine.write("go movetime 1000")
+	UciEngine.Write("go movetime 1000")
