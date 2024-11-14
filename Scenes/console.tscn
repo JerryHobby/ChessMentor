@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxky2h281uega"]
 
-[ext_resource type="Script" path="res://Scripts/Console/console.gd" id="1_wljcp"]
+[ext_resource type="Script" path="res://Scripts/Console/Console.cs" id="1_ljxwk"]
 [ext_resource type="FontFile" uid="uid://b40wtusgfvd3q" path="res://Assets/HackNerdFontMono-Regular.ttf" id="2_1akgs"]
 
 [node name="Console" type="VBoxContainer"]
@@ -9,7 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wljcp")
+script = ExtResource("1_ljxwk")
+consoleNodePath = NodePath("Console")
+commandNodePath = NodePath("HBoxContainer/UCI Command")
 
 [node name="Console" type="TextEdit" parent="."]
 custom_minimum_size = Vector2(500, 250)

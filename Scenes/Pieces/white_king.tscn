@@ -4,4 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://62tt0vnfyjmj" path="res://Assets/chessThemes/pieces/set3/WhiteKing.png" id="2_oxhpe"]
 
 [node name="Piece" instance=ExtResource("1_ojuwj")]
+
+[node name="TextureRect" parent="." index="0"]
 texture = ExtResource("2_oxhpe")

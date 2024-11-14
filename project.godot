@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Scripts/Singletons/game_manager.gd"
+GameManager="*res://Scripts/Singletons/GameManager.cs"
+SqlController="*res://Scripts/Singletons/SqlController.cs"
 UciEngine="*res://Scripts/Singletons/UciEngine.cs"
-SqlController="*res://Scripts/Singletons/sql_controller.gd"
 ChessManager="*res://Scripts/Singletons/ChessManager.cs"
 
 [debug]

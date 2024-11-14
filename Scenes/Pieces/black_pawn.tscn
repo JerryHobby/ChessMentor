@@ -4,4 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://df5hba8hdqoj7" path="res://Assets/chessThemes/pieces/set3/BlackPawn.png" id="2_5rfh7"]
 
 [node name="Piece" instance=ExtResource("1_v0fqm")]
+
+[node name="TextureRect" parent="." index="0"]
 texture = ExtResource("2_5rfh7")

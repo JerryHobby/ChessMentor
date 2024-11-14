@@ -17,8 +17,6 @@ public partial class UciEngine : Node
 	private string outputText = "";
 	private const int BufferSize = 1024; // Read larger chunks of data
 	private bool stopThread = false; // Flag to signal the thread to stop
-	private CancellationTokenSource cancellationTokenSource;
-	private CancellationToken cancellationToken;
 
 	public override void _Ready()
 	{
@@ -85,7 +83,7 @@ public partial class UciEngine : Node
 
 	private void ProcessLine(string line)
 	{
-		GD.Print(line);
+		//GD.Print(line);
 		// Use the intermediary method to emit the signal on the main thread
 		CallDeferred(nameof(EmitNewUciText), line);
 	}
@@ -97,19 +95,24 @@ public partial class UciEngine : Node
 
 	public override void _ExitTree()
 	{
+		GD.Print("UciEngine _ExitTree called");
 		CleanUp();
 	}
 
-	private void CleanUp()
+	public void CleanUp()
 	{
-		cancellationTokenSource.Cancel(); // Signal the thread to stop
+		GD.Print("UciEngine CleanUp called");
+		stopThread = true;
 		if (readThread != null && readThread.IsAlive)
 		{
+			GD.Print("Waiting for readThread to finish");
 			readThread.Join(); // Wait for the thread to finish
 		}
 		if (uciProcess != null && !uciProcess.HasExited)
 		{
+			GD.Print("Killing uciProcess");
 			uciProcess.Kill();
 		}
+		GD.Print("UciEngine CleanUp finished");
 	}
 }

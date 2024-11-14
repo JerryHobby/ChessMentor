@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cehtaf6cl2kmd"]
 
-[ext_resource type="Script" path="res://Scripts/ChessBoard/board.gd" id="1_l2glv"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/Board.cs" id="1_x2a1b"]
 [ext_resource type="PackedScene" uid="uid://b4yohunmwmc1p" path="res://Scenes/ChessBoard/square.tscn" id="2_whc3d"]
 [ext_resource type="PackedScene" uid="uid://cnkr4scfmervr" path="res://Scenes/ChessBoard/coord.tscn" id="3_cemlu"]
-[ext_resource type="Script" path="res://Scripts/ChessBoard/piece_controller.gd" id="4_f71to"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/PieceController.cs" id="4_822lb"]
 
 [node name="Board" type="MarginContainer"]
 anchors_preset = 15
@@ -11,6 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x2a1b")
+gridContainerPath = NodePath("MarginContainer/Board")
+pieceControllerPath = NodePath("MarginContainer/Board/PieceController")
 
 [node name="BG" type="ColorRect" parent="."]
 layout_mode = 2
@@ -29,7 +32,6 @@ layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 9
-script = ExtResource("1_l2glv")
 
 [node name="Square1" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -57,7 +59,7 @@ layout_mode = 2
 
 [node name="Coord8" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "8"
+LabelText = "8"
 
 [node name="Square9" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -85,7 +87,7 @@ layout_mode = 2
 
 [node name="Coord7" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "7"
+LabelText = "7"
 
 [node name="Square17" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -113,7 +115,7 @@ layout_mode = 2
 
 [node name="Coord6" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "6"
+LabelText = "6"
 
 [node name="Square25" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -141,7 +143,7 @@ layout_mode = 2
 
 [node name="Coord5" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "5"
+LabelText = "5"
 
 [node name="Square33" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -169,7 +171,7 @@ layout_mode = 2
 
 [node name="Coord4" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "4"
+LabelText = "4"
 
 [node name="Square41" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -197,7 +199,7 @@ layout_mode = 2
 
 [node name="Coord3" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "3"
+LabelText = "3"
 
 [node name="Square49" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -225,7 +227,7 @@ layout_mode = 2
 
 [node name="Coord2" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "2"
+LabelText = "2"
 
 [node name="Square57" parent="MarginContainer/Board" instance=ExtResource("2_whc3d")]
 layout_mode = 2
@@ -253,39 +255,41 @@ layout_mode = 2
 
 [node name="Coord1" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "1"
+LabelText = "1"
 
 [node name="CoordA" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "A"
+LabelText = "A"
 
 [node name="CoordB" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "B"
+LabelText = "B"
 
 [node name="CoordC" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "C"
+LabelText = "C"
 
 [node name="CoordD" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "D"
+LabelText = "D"
 
 [node name="CoordE" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "E"
+LabelText = "E"
 
 [node name="CoordF" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "F"
+LabelText = "F"
 
 [node name="CoordG" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "G"
+LabelText = "G"
 
 [node name="CoordH" parent="MarginContainer/Board" instance=ExtResource("3_cemlu")]
 layout_mode = 2
-labelText = "H"
+LabelText = "H"
 
-[node name="PieceController" type="Node2D" parent="MarginContainer"]
-script = ExtResource("4_f71to")
+[node name="PieceController" type="Node2D" parent="MarginContainer/Board"]
+position = Vector2(-23, -23)
+script = ExtResource("4_822lb")
+square1Path = NodePath("../Square1")

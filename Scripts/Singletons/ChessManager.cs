@@ -23,6 +23,7 @@ public partial class ChessManager : Node
 
     public bool IsValidMove(string move)
     {
+        GD.Print("Trying Move: " + move);
         // Convert the move string to a Move object
         Move parsedMove = new Move(move.Substring(0, 2), move.Substring(2, 2), game.WhoseTurn);
         return game.IsValidMove(parsedMove);
@@ -38,21 +39,18 @@ public partial class ChessManager : Node
             string newFen = game.GetFen();
             uciEngine.Write("position fen " + newFen);  // Call Write method on uciEngine
         }
-    }
-
-    public string GetFen()
-    {
-        return game.GetFen();
-    }
-
-    public List<string> GetLegalMoves()
-    {
-        var legalMoves = game.GetValidMoves(game.WhoseTurn);
-        var moveList = new List<string>();
-        foreach (var move in legalMoves)
+        else
         {
-            moveList.Add(move.ToString());
+            // Handle invalid move (return piece to original location)
+            GD.Print("Invalid move: " + move);
+            // Logic to return the piece to its original location
+            // This will depend on how the board and pieces are managed in your game
         }
-        return moveList;
+    }
+
+    public void UpdateBoardFromFen(string fen)
+    {
+        GD.Print("UpdateBoardFromFen called with FEN: ", fen);
+        game = new ChessGame(fen);
     }
 }

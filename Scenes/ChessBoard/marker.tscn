@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc7f1nfhqp4f2"]
 
-[ext_resource type="Script" path="res://Scripts/ChessBoard/marker.gd" id="1_wuhxp"]
+[ext_resource type="Script" path="res://Scripts/ChessBoard/Marker.cs" id="1_0fawy"]
 [ext_resource type="Texture2D" uid="uid://b7pycxigif4v7" path="res://Assets/Shapes/CircleWhite.svg" id="2_nahsg"]
 
 [node name="Marker" type="Control"]
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_wuhxp")
+script = ExtResource("1_0fawy")
 
 [node name="Shape" type="TextureRect" parent="."]
 visible = false
