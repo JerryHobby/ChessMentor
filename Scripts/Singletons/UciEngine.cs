@@ -17,6 +17,7 @@ public partial class UciEngine : Node
 	private string outputText = "";
 	private const int BufferSize = 1024; // Read larger chunks of data
 	private bool stopThread = false; // Flag to signal the thread to stop
+	private ManualResetEvent stopEvent = new ManualResetEvent(false);
 
 	public override void _Ready()
 	{
@@ -59,7 +60,7 @@ public partial class UciEngine : Node
 	private void ReadOutput()
 	{
 		char[] buffer = new char[BufferSize];
-		while (!stopThread)
+		while (!stopEvent.WaitOne(0))
 		{
 			int read = uciOutput.Read(buffer, 0, BufferSize);
 			if (read > 0)
@@ -103,10 +104,14 @@ public partial class UciEngine : Node
 	{
 		GD.Print("UciEngine CleanUp called");
 		stopThread = true;
+		stopEvent.Set(); // Signal the thread to stop
 		if (readThread != null && readThread.IsAlive)
 		{
 			GD.Print("Waiting for readThread to finish");
-			readThread.Join(); // Wait for the thread to finish
+			if (!readThread.Join(1000)) // Wait for 1 second
+			{
+				GD.Print("readThread did not finish in time");
+			}
 		}
 		if (uciProcess != null && !uciProcess.HasExited)
 		{

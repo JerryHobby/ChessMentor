@@ -21,7 +21,7 @@ public partial class SqlController : Node
             string absolutePath = ProjectSettings.GlobalizePath(databasePath);
             string connectionString = $"Data Source={absolutePath};Version=3;";
             database = new SQLiteConnection(connectionString);
-            database.Open();
+            // database.Open();
             GD.Print("Database connection opened successfully");
         }
         catch (Exception ex)
@@ -34,6 +34,8 @@ public partial class SqlController : Node
     {
         try
         {
+            GD.Print("Opening database connection");
+            database.Open();
             GD.Print("Executing query: ", queryString);
             using (var command = new SQLiteCommand(queryString, database))
             {
@@ -51,20 +53,25 @@ public partial class SqlController : Node
             GD.PrintErr("DbQuery failed: ", ex.Message);
             return null;
         }
-    }
-
-    public override void _ExitTree()
-    {
-        GD.Print("SqlController _ExitTree called");
-        if (database != null && database.State == ConnectionState.Open)
+        finally
         {
             GD.Print("Closing database connection");
             database.Close();
-            GD.Print("Database connection closed");
-        }
-        else
-        {
-            GD.Print("Database connection was already closed or null");
         }
     }
+
+    // public override void _ExitTree()
+    // {
+    //     GD.Print("SqlController _ExitTree called");
+    //     if (database != null && database.State == ConnectionState.Open)
+    //     {
+    //         GD.Print("Closing database connection");
+    //         database.Close();
+    //         GD.Print("Database connection closed");
+    //     }
+    //     else
+    //     {
+    //         GD.Print("Database connection was already closed or null");
+    //     }
+    // }
 }
