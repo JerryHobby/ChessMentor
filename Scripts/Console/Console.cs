@@ -43,4 +43,16 @@ public partial class Console : VBoxContainer
         }
         consoleNode.ScrollVertical = consoleNode.GetVScrollBar().MaxValue;
     }
+
+    private void _on_uci_command_text_submitted(String _text)
+    {
+        uciEngine.Write(commandNode.Text);
+        commandNode.Text = "";
+    }
+
+    private void _on_submit_button_pressed()
+    {
+        uciEngine.Write(commandNode.Text);
+        commandNode.Text = "";
+    }
 }
