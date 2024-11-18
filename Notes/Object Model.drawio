@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-22T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.6" etag="your-etag">
+  <diagram name="ChessMentor Object Model" id="chess_mentor_objects">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Core Game Classes -->
+        <mxCell id="game_manager" value="ChessManager&#xa;{singleton}&#xa;------------------&#xa;- game: ChessGame&#xa;- uciEngine: UciEngine&#xa;- debugManager: DebugManager&#xa;------------------&#xa;+ HandleMove()&#xa;+ NewGame()&#xa;+ GetCurrentPosition()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- UCI Engine -->
+        <mxCell id="uci_engine" value="UciEngine&#xa;{singleton}&#xa;------------------&#xa;- uciProcess: Process&#xa;- isThinking: bool&#xa;- debugManager: DebugManager&#xa;------------------&#xa;+ Write(command: string)&#xa;+ StartThinking()&#xa;+ StopThinking()&#xa;+ CleanUp()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="700" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Debug Manager -->
+        <mxCell id="debug_manager" value="DebugManager&#xa;{singleton}&#xa;------------------&#xa;- logFile: StreamWriter&#xa;- categories: Dictionary&#xa;------------------&#xa;+ Log(category, message)&#xa;+ LogError(message, ex)&#xa;+ LogUCI(type, message)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="700" y="280" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Board -->
+        <mxCell id="board" value="Board&#xa;{node}&#xa;------------------&#xa;- chessManager: ChessManager&#xa;- pieceController: PieceController&#xa;- debugManager: DebugManager&#xa;------------------&#xa;+ _Draw()&#xa;+ GetSquareCenter()&#xa;+ HighlightSquare()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Piece Controller -->
+        <mxCell id="piece_controller" value="PieceController&#xa;{node}&#xa;------------------&#xa;- pieces: Dictionary&#xa;- board: Board&#xa;- chessManager: ChessManager&#xa;------------------&#xa;+ CreatePiece()&#xa;+ MovePiece()&#xa;+ HandlePieceDrop()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Game Class -->
+        <mxCell id="game" value="Game&#xa;{model}&#xa;------------------&#xa;- id: string&#xa;- players: Player[]&#xa;- moves: List&lt;Move&gt;&#xa;- position: ChessGame&#xa;------------------&#xa;+ MakeMove()&#xa;+ GetFen()&#xa;+ IsGameOver()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=110;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="r1" value="" style="endArrow=diamond;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="game" target="game_manager">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r2" value="" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="piece_controller" target="board">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r3" value="" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="debug_manager" target="game_manager">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="380" />
+              <mxPoint x="600" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="r4" value="" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="uci_engine" target="game_manager">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r5" value="" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="debug_manager" target="uci_engine">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r6" value="" style="endArrow=diamond;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="game_manager" target="board">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
